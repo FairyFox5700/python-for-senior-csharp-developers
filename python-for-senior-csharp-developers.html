@@ -1,0 +1,1249 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Python for Senior C# Developers</title><style>
+@page{size:11.25in 14.0625in;margin:0}*{box-sizing:border-box}html,body{margin:0;padding:0;background:#dfe4f0;font-family:Manrope,"Segoe UI",Arial,sans-serif;color:#17204a}body{display:block}.slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:#fff;padding:64px 72px 86px;page-break-after:always;break-after:page}.slide:before{content:"";position:absolute;right:0;top:0;width:220px;height:220px;border-radius:0 0 0 100%;background:#FFE8E0}.topline{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2}.section{font-size:22px;font-weight:800;letter-spacing:2.4px;color:#C85C12}.page{font-size:20px;font-weight:700;color:#1B2A6B}.title-pill{display:inline-block;margin-top:34px;padding:11px 20px;border-radius:999px;background:#FFE8E0;color:#8B3C18;font-size:20px;font-weight:800;letter-spacing:.3px;position:relative;z-index:2}h1{font-size:54px;line-height:1.05;letter-spacing:-1.5px;color:#1B2A6B;margin:22px 0 22px;max-width:880px;position:relative;z-index:2}.explain{font-size:27px;line-height:1.43;color:#2d365d;margin:0 0 28px;max-width:920px}.grid{display:grid;grid-template-columns:.84fr 1.16fr;gap:22px;align-items:stretch}.card,.code{border:2px solid #d2d8e8;border-radius:22px;padding:24px 26px;background:#f9faff;min-height:250px}.card h2{font-size:22px;text-transform:uppercase;letter-spacing:1.5px;color:#C85C12;margin:0 0 14px}.card ul{margin:0;padding-left:24px}.card li{font-size:21px;line-height:1.38;margin:9px 0;color:#232d57}.code{background:#17204a;border-color:#17204a;display:flex;align-items:center}.code:empty{display:none}.code pre{white-space:pre;word-break:normal;overflow:hidden;color:#f7f7fb;font:15px/1.42 "Cascadia Code",Consolas,monospace;margin:0}.insight{margin-top:22px;padding:20px 24px;border-left:8px solid #F5A623;background:#fff7e8;border-radius:10px 18px 18px 10px;display:grid;grid-template-columns:145px 1fr;gap:14px;font-size:21px;line-height:1.35}.insight b{color:#9B4F00}.resource{position:absolute;left:72px;right:72px;bottom:86px;text-decoration:none;color:#1B2A6B;background:#edf4ff;border:1px solid #c8d8f2;border-radius:16px;padding:14px 18px;font-size:18px;display:flex;gap:12px;align-items:center}.resource span{margin-left:auto;color:#334268;font-size:16px;max-width:500px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}footer{position:absolute;left:0;right:0;bottom:0;height:58px;background:#1B2A6B;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 72px;font-size:17px;font-weight:700}.cover{padding-top:120px;background:linear-gradient(145deg,#fff 0 66%,#f2f5ff 66%)}.cover h1{font-size:76px;max-width:820px;margin-top:50px}.cover .explain{font-size:32px;max-width:800px}.cover .title-pill{font-size:24px}.cover .grid{margin-top:40px}.cover .card{grid-column:1/3}.cover .code{display:none}
+</style></head><body><section class="slide cover">
+      <div class="topline"><span class="section">START</span><span class="page">01 / 82</span></div>
+      <div class="title-pill">An 8-week, project-led handbook</div>
+      <h1>Python for Senior C# Developers</h1>
+      <p class="explain">A practical bridge from mature .NET engineering to idiomatic Python. The goal is not to relearn programming—it is to replace C# assumptions with Python’s runtime model, tooling, and design habits.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>80 focused lessons</li><li>30% study · 70% implementation</li><li>Examples, projects, checks, and authoritative links</li></ul></div>
+        
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Build small systems early. Fluency comes from changing design instincts, not memorizing syntax.</span></div>
+      <a class="resource" href="https://docs.python.org/3/"><b>Go deeper →</b> Python documentation<span>https://docs.python.org/3/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">START</span><span class="page">02 / 82</span></div>
+      <div class="title-pill">Read less. Build more.</div>
+      <h1>How to use this handbook</h1>
+      <p class="explain">Treat every page as a short design review. Read the concept, type the example, then apply it to the weekly project. Do not copy solutions without running them and changing one assumption.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Three 90-minute build sessions each week</li><li>One 60-minute reading and review session</li><li>Finish each week with tests and a short retrospective</li></ul></div>
+        <div class="code"><pre>python -m venv .venv
+python -m pip install -U pip</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Keep one repository for the full journey so earlier modules can evolve into the final service.</span></div>
+      <a class="resource" href="https://docs.python.org/3/tutorial/"><b>Go deeper →</b> Python tutorial<span>https://docs.python.org/3/tutorial/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">START</span><span class="page">03 / 82</span></div>
+      <div class="title-pill">Production habits beat course completion</div>
+      <h1>The 30/70 learning model</h1>
+      <p class="explain">Senior engineers learn a language fastest when every feature is attached to a real constraint: malformed input, cancellation, packaging, observability, or a clean deployment.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>30%: documentation and focused exercises</li><li>50%: weekly implementation</li><li>20%: tests, review, and refactoring</li></ul></div>
+        <div class="code"><pre># Weekly loop
+learn()
+build()
+test()
+refactor()</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not complete several overlapping beginner courses. Use one primary reference and keep shipping.</span></div>
+      <a class="resource" href="https://exercism.org/tracks/python"><b>Go deeper →</b> Exercism Python track<span>https://exercism.org/tracks/python</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">04 / 82</span></div>
+      <div class="title-pill">Python is not C# with fewer braces</div>
+      <h1>The mental-model shift</h1>
+      <p class="explain">Both languages support object-oriented, functional, and asynchronous styles. The difference is where guarantees live: C# pushes many decisions to compile time; Python combines runtime protocols with optional static analysis.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Prefer behavior over declared ancestry</li><li>Use types to communicate—not to imitate C#</li><li>Expect conventions and tooling to replace some compiler enforcement</li></ul></div>
+        <div class="code"><pre>def total(items):
+    return sum(x.price for x in items)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Translate the requirement, not the original C# class diagram.</span></div>
+      <a class="resource" href="https://docs.python.org/3/reference/datamodel.html"><b>Go deeper →</b> Python data model<span>https://docs.python.org/3/reference/datamodel.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">05 / 82</span></div>
+      <div class="title-pill">Type hints do not change runtime behavior</div>
+      <h1>Static typing → gradual typing</h1>
+      <p class="explain">Python annotations improve editor support, documentation, and static checking. They are normally not enforced when the program runs, so boundary validation remains a separate concern.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Annotate public APIs and domain models</li><li>Let local obvious types be inferred</li><li>Run a checker such as mypy or Pyright in CI</li></ul></div>
+        <div class="code"><pre>def total(prices: list[float]) -&gt; float:
+    return sum(prices)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not add Java-style ceremony merely to satisfy a checker; model useful contracts.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/typing.html"><b>Go deeper →</b> Python typing<span>https://docs.python.org/3/library/typing.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">06 / 82</span></div>
+      <div class="title-pill">Data objects without boilerplate</div>
+      <h1>Records → dataclasses</h1>
+      <p class="explain">A dataclass can generate initialization, representation, and equality methods. Frozen dataclasses express intent, but they do not make referenced mutable objects deeply immutable.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use for domain values and configuration</li><li>Choose frozen=True for value-like objects</li><li>Validate invariants in __post_init__ when needed</li></ul></div>
+        <div class="code"><pre>from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Money:
+    amount: int
+    currency: str = &#x27;EUR&#x27;</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A dataclass is a tool, not an automatic domain model. Keep behavior near the data when it belongs there.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/dataclasses.html"><b>Go deeper →</b> dataclasses<span>https://docs.python.org/3/library/dataclasses.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">07 / 82</span></div>
+      <div class="title-pill">Compatibility by behavior</div>
+      <h1>Interfaces → protocols</h1>
+      <p class="explain">A Protocol describes the operations a consumer needs. Structural typing means an implementation can satisfy the contract without explicitly inheriting from it—similar to compile-time duck typing.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Define narrow consumer-owned protocols</li><li>Use ABCs when shared implementation or runtime membership matters</li><li>Use plain duck typing inside small modules</li></ul></div>
+        <div class="code"><pre>from typing import Protocol
+
+class Pricer(Protocol):
+    def price(self, sku: str) -&gt; int: ...</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Avoid an interface for every class. Introduce a protocol where substitution or testing creates real value.</span></div>
+      <a class="resource" href="https://typing.python.org/en/latest/spec/protocol.html"><b>Go deeper →</b> Protocols<span>https://typing.python.org/en/latest/spec/protocol.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">08 / 82</span></div>
+      <div class="title-pill">Pipeline thinking, lighter syntax</div>
+      <h1>LINQ → expressions and iterators</h1>
+      <p class="explain">Comprehensions handle common projection and filtering. Generator expressions stay lazy. itertools provides composable iterator building blocks for more complex flows.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use comprehensions for simple transformations</li><li>Use generators for large or streaming data</li><li>Split pipelines when readability drops</li></ul></div>
+        <div class="code"><pre>totals = [o.total for o in orders if o.paid]
+revenue = sum(
+    o.total for o in orders
+    if o.paid
+)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not force a long LINQ-style chain into one expression; name meaningful stages.</span></div>
+      <a class="resource" href="https://docs.python.org/3/howto/functional.html"><b>Go deeper →</b> Functional programming tools<span>https://docs.python.org/3/howto/functional.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">09 / 82</span></div>
+      <div class="title-pill">Async is still cooperative concurrency</div>
+      <h1>Task → coroutine and task</h1>
+      <p class="explain">Calling an async function creates a coroutine. Scheduling it as a task allows concurrent progress while operations await. One blocking call can still stall the entire event loop.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use async for high-latency I/O</li><li>Set timeouts at external boundaries</li><li>Propagate cancellation instead of swallowing it</li></ul></div>
+        <div class="code"><pre>async with asyncio.TaskGroup() as tg:
+    for url in urls:
+        tg.create_task(fetch(url))</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>async does not make CPU-heavy work faster. Move CPU work to a process or specialized service.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/asyncio.html"><b>Go deeper →</b> asyncio<span>https://docs.python.org/3/library/asyncio.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">10 / 82</span></div>
+      <div class="title-pill">Lifecycle as a language protocol</div>
+      <h1>using → context manager</h1>
+      <p class="explain">The with statement guarantees exit logic around a block. Files, locks, database transactions, and custom resources can expose the context-manager protocol.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Acquire as late as possible</li><li>Keep the protected scope small</li><li>Create custom managers with contextlib</li></ul></div>
+        <div class="code"><pre>from pathlib import Path
+
+with Path(&#x27;orders.json&#x27;).open() as f:
+    data = f.read()</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Context managers govern more than disposal: they can define transaction and rollback semantics.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/contextlib.html"><b>Go deeper →</b> contextlib<span>https://docs.python.org/3/library/contextlib.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">11 / 82</span></div>
+      <div class="title-pill">One standard project metadata file</div>
+      <h1>NuGet → PyPI + pyproject.toml</h1>
+      <p class="explain">pyproject.toml describes build requirements, project metadata, dependencies, and often tool configuration. Virtual environments isolate installed packages per project.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use a src/ layout for reusable packages</li><li>Keep runtime and development dependencies explicit</li><li>Build and install in a clean environment</li></ul></div>
+        <div class="code"><pre>[project]
+name = &#x27;commerce-pricing&#x27;
+version = &#x27;0.1.0&#x27;
+requires-python = &#x27;&gt;=3.12&#x27;</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A lock file and pyproject.toml solve different problems: repeatable application installs versus package metadata.</span></div>
+      <a class="resource" href="https://packaging.python.org/en/latest/tutorials/packaging-projects/"><b>Go deeper →</b> Packaging projects<span>https://packaging.python.org/en/latest/tutorials/packaging-projects/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">12 / 82</span></div>
+      <div class="title-pill">Plain assertions, powerful fixtures</div>
+      <h1>xUnit → pytest</h1>
+      <p class="explain">pytest discovers tests and rewrites assert statements to produce useful failures. Fixtures model reusable setup and teardown through dependency injection by function argument.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Test behavior, not implementation details</li><li>Parametrize rules and boundary cases</li><li>Keep fixtures small and explicit</li></ul></div>
+        <div class="code"><pre>def test_percentage_discount():
+    assert discount(1000, 10) == 900</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A giant shared fixture graph becomes as opaque as an overgrown DI container.</span></div>
+      <a class="resource" href="https://docs.pytest.org/en/stable/"><b>Go deeper →</b> pytest documentation<span>https://docs.pytest.org/en/stable/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">13 / 82</span></div>
+      <div class="title-pill">Pass collaborators where they are used</div>
+      <h1>DI container → explicit injection</h1>
+      <p class="explain">Python applications often inject dependencies through constructors or function parameters. Framework-managed containers are useful at application boundaries, but rarely necessary throughout the domain.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Inject clocks, gateways, and repositories</li><li>Keep object construction in one composition root</li><li>Prefer a callable when one operation is enough</li></ul></div>
+        <div class="code"><pre>def checkout(order, charge):
+    receipt = charge(order.total)
+    return receipt</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Dynamic typing is not a reason to hide dependencies in module globals.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/dependencies/"><b>Go deeper →</b> Dependency injection in FastAPI<span>https://fastapi.tiangolo.com/tutorial/dependencies/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">14 / 82</span></div>
+      <div class="title-pill">Choose the framework for the product</div>
+      <h1>ASP.NET Core → Python web choices</h1>
+      <p class="explain">FastAPI fits typed APIs and OpenAPI-first services. Django includes ORM, authentication, admin, and a mature full-stack ecosystem. Flask stays intentionally small.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>FastAPI: typed service APIs</li><li>Django: integrated business applications</li><li>Flask: small services and custom stacks</li></ul></div>
+        <div class="code"><pre>from fastapi import FastAPI
+app = FastAPI()
+
+@app.get(&#x27;/health&#x27;)
+def health(): return {&#x27;ok&#x27;: True}</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Framework choice is architecture only at the edges. Keep domain logic importable without the web framework.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/"><b>Go deeper →</b> FastAPI tutorial<span>https://fastapi.tiangolo.com/tutorial/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">MENTAL MODEL</span><span class="page">15 / 82</span></div>
+      <div class="title-pill">Separate repeatable sources from one-pass state</div>
+      <h1>IEnumerable → iterable, iterator, generator</h1>
+      <p class="explain">An iterable can produce an iterator. An iterator tracks traversal state and is consumed once. A generator is a concise way to implement an iterator with suspended execution.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Document one-pass APIs clearly</li><li>Return iterables instead of materialized lists when useful</li><li>Convert to list only when callers need replay or indexing</li></ul></div>
+        <div class="code"><pre>def paid(orders):
+    for order in orders:
+        if order.paid:
+            yield order</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Calling iter() on an iterator returns the same consumed object; this surprises code expecting replay.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/stdtypes.html#iterator-types"><b>Go deeper →</b> Iterator types<span>https://docs.python.org/3/library/stdtypes.html#iterator-types</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 1</span><span class="page">16 / 82</span></div>
+      <div class="title-pill">Build an order-processing CLI</div>
+      <h1>Syntax and idioms</h1>
+      <p class="explain">Focus on collections, slicing, unpacking, comprehensions, truthiness, keyword arguments, exceptions, naming, and pattern matching. The deliverable reads JSON, validates orders, calculates totals, groups customers, and writes a report.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep I/O separate from pricing rules</li><li>Use pathlib and json from the standard library</li><li>Reject malformed records with useful context</li></ul></div>
+        <div class="code"><pre>match event:
+    case {&#x27;type&#x27;: &#x27;paid&#x27;, &#x27;order_id&#x27;: oid}:
+        handle_paid(oid)
+    case _:
+        raise ValueError(&#x27;unknown event&#x27;)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Success means the code feels native: few unnecessary classes, clear names, and tests around malformed input.</span></div>
+      <a class="resource" href="https://docs.python.org/3/tutorial/controlflow.html"><b>Go deeper →</b> Control flow<span>https://docs.python.org/3/tutorial/controlflow.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">17 / 82</span></div>
+      <div class="title-pill">Names bind to objects</div>
+      <h1>Everything is an object</h1>
+      <p class="explain">Variables are names, not typed storage locations. Assignment binds a name to an object; passing an argument binds another local name to that same object. This explains mutation, identity, and many debugging surprises.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Inspect type(obj), id(obj), and repr(obj)</li><li>Understand rebinding versus mutation</li><li>Do not use C# value/reference terminology mechanically</li></ul></div>
+        <div class="code"><pre>cart = []
+other = cart
+other.append(&#x27;sku-1&#x27;)
+assert cart == [&#x27;sku-1&#x27;]</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Reason about object identity and aliases before blaming “pass by reference.”</span></div>
+      <a class="resource" href="https://docs.python.org/3/reference/datamodel.html#objects-values-and-types"><b>Go deeper →</b> Data model: objects<span>https://docs.python.org/3/reference/datamodel.html#objects-values-and-types</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">18 / 82</span></div>
+      <div class="title-pill">The object decides whether state can change</div>
+      <h1>Mutability and immutability</h1>
+      <p class="explain">Lists and dictionaries are mutable; tuples, strings, and integers are immutable. An immutable container may still reference mutable values, so immutability is not automatically deep.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use tuples for fixed heterogeneous records sparingly</li><li>Copy mutable input when ownership must be isolated</li><li>Never use a mutable object as a default argument</li></ul></div>
+        <div class="code"><pre>def add(item, items=None):
+    items = [] if items is None else items
+    items.append(item)
+    return items</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Mutable defaults are created once at function definition time, not once per call.</span></div>
+      <a class="resource" href="https://docs.python.org/3/faq/programming.html#why-are-default-values-shared-between-objects"><b>Go deeper →</b> Python FAQ: shared defaults<span>https://docs.python.org/3/faq/programming.html#why-are-default-values-shared-between-objects</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">19 / 82</span></div>
+      <div class="title-pill">is answers a different question than ==</div>
+      <h1>Identity versus equality</h1>
+      <p class="explain">Equality asks whether values compare equal. Identity asks whether two names reference the exact same object. Use is for None and deliberate singleton sentinels—not for strings or numbers.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Write value equality through dataclasses or __eq__</li><li>Use `value is None`</li><li>Create a unique sentinel with object()</li></ul></div>
+        <div class="code"><pre>MISSING = object()
+value = payload.get(&#x27;coupon&#x27;, MISSING)
+if value is MISSING:
+    handle_absent_coupon()</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Interning can make identity tests appear to work until they fail in another runtime or execution.</span></div>
+      <a class="resource" href="https://docs.python.org/3/reference/expressions.html#comparisons"><b>Go deeper →</b> Comparisons<span>https://docs.python.org/3/reference/expressions.html#comparisons</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">20 / 82</span></div>
+      <div class="title-pill">Copying is an ownership decision</div>
+      <h1>Shallow and deep copies</h1>
+      <p class="explain">A shallow copy creates a new outer container but reuses nested references. deepcopy recursively duplicates supported objects, which may be expensive or semantically wrong for resources and shared identities.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Prefer constructing a new domain value explicitly</li><li>Use copy.copy for a new outer container</li><li>Reserve deepcopy for genuinely tree-like state</li></ul></div>
+        <div class="code"><pre>from copy import copy
+updated = copy(order)
+updated.lines = [*order.lines, new_line]</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Blind deepcopy can duplicate state that should remain shared or cannot be copied safely.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/copy.html"><b>Go deeper →</b> copy module<span>https://docs.python.org/3/library/copy.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">21 / 82</span></div>
+      <div class="title-pill">Generated methods with explicit trade-offs</div>
+      <h1>Dataclasses in depth</h1>
+      <p class="explain">Dataclasses can generate init, repr, equality, ordering, slots, and frozen behavior. default_factory creates a fresh mutable value for every instance.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use slots=True after measuring or for strong shape constraints</li><li>Use field(default_factory=list)</li><li>Keep validation and derived values explicit</li></ul></div>
+        <div class="code"><pre>from dataclasses import dataclass, field
+@dataclass(slots=True)
+class Cart:
+    lines: list[str] = field(default_factory=list)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>unsafe_hash=True deserves scrutiny; hashing mutable business state can corrupt dictionaries and sets.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/dataclasses.html"><b>Go deeper →</b> dataclasses reference<span>https://docs.python.org/3/library/dataclasses.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">22 / 82</span></div>
+      <div class="title-pill">Preserve a simple attribute-facing API</div>
+      <h1>Properties</h1>
+      <p class="explain">A property allows computed access or validation while callers use attribute syntax. It is useful when behavior belongs to the object, but not as a reason to port every C# property verbatim.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Expose plain attributes by default</li><li>Add a property when computation or invariant requires it</li><li>Avoid hidden network or database I/O in properties</li></ul></div>
+        <div class="code"><pre>class Order:
+    @property
+    def total(self) -&gt; int:
+        return sum(x.total for x in self.lines)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A property should be unsurprising and cheap; expensive work deserves an explicit method.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/functions.html#property"><b>Go deeper →</b> property built-in<span>https://docs.python.org/3/library/functions.html#property</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">23 / 82</span></div>
+      <div class="title-pill">Integrate with Python’s data model</div>
+      <h1>Dunder methods</h1>
+      <p class="explain">Special methods let your type participate in built-in syntax and protocols: repr, equality, iteration, length, context management, and more. Implement only semantics users can predict.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Make __repr__ useful for debugging</li><li>Return NotImplemented for unsupported comparisons</li><li>Prefer iteration over custom collection APIs</li></ul></div>
+        <div class="code"><pre>class Cart:
+    def __iter__(self):
+        return iter(self.lines)
+    def __len__(self):
+        return len(self.lines)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not call special methods directly when a built-in such as len() or iter() expresses the protocol.</span></div>
+      <a class="resource" href="https://docs.python.org/3/reference/datamodel.html#special-method-names"><b>Go deeper →</b> Special method names<span>https://docs.python.org/3/reference/datamodel.html#special-method-names</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">24 / 82</span></div>
+      <div class="title-pill">Small collaborators, explicit behavior</div>
+      <h1>Composition over inheritance</h1>
+      <p class="explain">Python’s multiple inheritance and dynamic model are powerful, but application code is usually clearer when behavior is composed from focused objects or functions.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Inject a pricing policy instead of subclassing Order</li><li>Use inheritance for genuine substitutability</li><li>Keep mixins narrow and behavior-focused</li></ul></div>
+        <div class="code"><pre>class Checkout:
+    def __init__(self, price):
+        self.price = price
+    def run(self, cart):
+        return self.price(cart)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A function is often the smallest useful strategy object in Python.</span></div>
+      <a class="resource" href="https://docs.python.org/3/tutorial/classes.html"><b>Go deeper →</b> Classes tutorial<span>https://docs.python.org/3/tutorial/classes.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 2</span><span class="page">25 / 82</span></div>
+      <div class="title-pill">Model behavior without enterprise ceremony</div>
+      <h1>Project: pricing library</h1>
+      <p class="explain">Build products, Money, carts, discounts, and pluggable pricing policies. Make the package usable from a CLI and from tests without framework dependencies.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Represent money in minor units or Decimal</li><li>Define rounding deliberately</li><li>Test competing discount rules and empty carts</li></ul></div>
+        <div class="code"><pre>def percentage(percent: int):
+    def apply(total: int) -&gt; int:
+        return total * (100 - percent) // 100
+    return apply</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Completion means readable domain code, useful reprs, and no “IProductServiceFactoryManager.”</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/decimal.html"><b>Go deeper →</b> decimal module<span>https://docs.python.org/3/library/decimal.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">26 / 82</span></div>
+      <div class="title-pill">Types are executable metadata</div>
+      <h1>Function and variable annotations</h1>
+      <p class="explain">Annotations live on functions and classes and can be inspected by tools. Postponed evaluation and forward references affect runtime inspection, so frameworks may resolve hints explicitly.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Annotate module boundaries first</li><li>Use collections.abc for behavioral inputs</li><li>Return precise types instead of Any</li></ul></div>
+        <div class="code"><pre>from collections.abc import Iterable
+
+def revenue(values: Iterable[int]) -&gt; int:
+    return sum(values)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A type checker cannot rescue an unclear API. Improve the model before adding complex type machinery.</span></div>
+      <a class="resource" href="https://typing.python.org/en/latest/reference/best_practices.html"><b>Go deeper →</b> Typing best practices<span>https://typing.python.org/en/latest/reference/best_practices.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">27 / 82</span></div>
+      <div class="title-pill">Model absence deliberately</div>
+      <h1>Containers, unions, and optional values</h1>
+      <p class="explain">Modern annotations use built-in generics and the | union operator. T | None means absence is valid; it does not supply a default and should be narrowed before use.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Prefer specific containers at boundaries</li><li>Accept Sequence or Iterable when mutation is unnecessary</li><li>Avoid large unions that hide multiple responsibilities</li></ul></div>
+        <div class="code"><pre>def find_order(order_id: str) -&gt; Order | None:
+    ...
+
+if (order := find_order(&#x27;A1&#x27;)) is not None:
+    print(order.total)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Optional is not a synonym for “parameter has a default.”</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/typing.html"><b>Go deeper →</b> Type annotation syntax<span>https://docs.python.org/3/library/typing.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">28 / 82</span></div>
+      <div class="title-pill">Preserve relationships between types</div>
+      <h1>Protocols and generics</h1>
+      <p class="explain">TypeVar and generic syntax describe how input and output types relate. Protocol captures required behavior. Use both when they improve a consumer’s understanding—not to reproduce .NET abstraction layers.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep protocols minimal</li><li>Bind type variables when operations require capabilities</li><li>Prefer concrete types for internal implementation details</li></ul></div>
+        <div class="code"><pre>from typing import Protocol, TypeVar
+T = TypeVar(&#x27;T&#x27;)
+class Repo(Protocol[T]):
+    def get(self, key: str) -&gt; T | None: ...</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>If a generic has no meaningful type relationship, a non-generic API is usually clearer.</span></div>
+      <a class="resource" href="https://typing.python.org/en/latest/reference/generics.html"><b>Go deeper →</b> Generics<span>https://typing.python.org/en/latest/reference/generics.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">29 / 82</span></div>
+      <div class="title-pill">Functions are first-class dependencies</div>
+      <h1>Callable and higher-order design</h1>
+      <p class="explain">Callable describes a function-like collaborator. Closures can capture configuration and return a focused operation, replacing small one-method classes when identity and lifecycle are unimportant.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Type callable parameters and return values</li><li>Use functools.partial for simple binding</li><li>Choose a class when state or multiple operations belong together</li></ul></div>
+        <div class="code"><pre>from collections.abc import Callable
+Price = Callable[[Cart], int]
+
+def checkout(cart: Cart, price: Price) -&gt; int:
+    return price(cart)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Callables make excellent test seams, but give important domain operations meaningful names.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/typing.html#annotating-callable-objects"><b>Go deeper →</b> Callable types<span>https://docs.python.org/3/library/typing.html#annotating-callable-objects</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">30 / 82</span></div>
+      <div class="title-pill">Prove which branch you are in</div>
+      <h1>Type narrowing</h1>
+      <p class="explain">Checkers narrow unions after isinstance, None checks, match statements, and user-defined TypeGuard or TypeIs functions. Narrow at boundaries, then keep the core model precise.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Validate untrusted input before narrowing</li><li>Use assert only for programmer invariants</li><li>Avoid cast unless runtime evidence exists elsewhere</li></ul></div>
+        <div class="code"><pre>def total(value: int | str) -&gt; int:
+    if isinstance(value, str):
+        value = int(value)
+    return value</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>cast changes the checker’s opinion; it performs no runtime conversion or validation.</span></div>
+      <a class="resource" href="https://typing.python.org/en/latest/guides/type_narrowing.html"><b>Go deeper →</b> Type narrowing<span>https://typing.python.org/en/latest/guides/type_narrowing.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">31 / 82</span></div>
+      <div class="title-pill">Design a stable public surface</div>
+      <h1>Packages, modules, and imports</h1>
+      <p class="explain">A module is a Python file; a package organizes modules. Imports execute module top-level code once per interpreter process and cache the module object.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep import-time work cheap</li><li>Expose a small public API from __init__.py</li><li>Break circular imports by fixing dependency direction</li></ul></div>
+        <div class="code"><pre>src/commerce_pricing/
+  __init__.py
+  models.py
+  pricing.py
+tests/</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>An import that opens connections or reads environment state makes tests and tooling fragile.</span></div>
+      <a class="resource" href="https://docs.python.org/3/tutorial/modules.html"><b>Go deeper →</b> Modules tutorial<span>https://docs.python.org/3/tutorial/modules.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">32 / 82</span></div>
+      <div class="title-pill">Isolate installations per project</div>
+      <h1>Virtual environments</h1>
+      <p class="explain">A virtual environment provides a project-specific interpreter context and site-packages directory. Activation is convenience; calling the environment’s interpreter directly is equally valid.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Create .venv outside source control</li><li>Use python -m pip to target the active interpreter</li><li>Recreate environments instead of repairing mystery state</li></ul></div>
+        <div class="code"><pre>python -m venv .venv
+# Windows
+.venv\Scripts\activate
+python -m pip install -e .</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>The environment is disposable; project metadata and lock data are the reproducible source.</span></div>
+      <a class="resource" href="https://docs.python.org/3/tutorial/venv.html"><b>Go deeper →</b> Virtual environments<span>https://docs.python.org/3/tutorial/venv.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 3</span><span class="page">33 / 82</span></div>
+      <div class="title-pill">Make the library installable</div>
+      <h1>pyproject.toml and package project</h1>
+      <p class="explain">Move the pricing library under src/, declare metadata and dependencies, and add tool configuration. Verify editable installation during development and a built wheel in a clean environment.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Build both wheel and source distribution</li><li>Test the installed artifact—not only the checkout</li><li>Document supported Python versions</li></ul></div>
+        <div class="code"><pre>python -m pip install -e &#x27;.[dev]&#x27;
+python -m build
+python -m pytest</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A green test suite in the repository does not prove the package contains all required files.</span></div>
+      <a class="resource" href="https://packaging.python.org/en/latest/specifications/pyproject-toml/"><b>Go deeper →</b> pyproject.toml specification<span>https://packaging.python.org/en/latest/specifications/pyproject-toml/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">34 / 82</span></div>
+      <div class="title-pill">Tests are ordinary functions</div>
+      <h1>pytest fundamentals</h1>
+      <p class="explain">pytest discovers tests, rewrites assertions, captures output, and reports rich diffs. Arrange behavior around public APIs rather than mirroring every implementation function.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Name tests after behavior and condition</li><li>Use plain assert expressions</li><li>Keep a fast default test command</li></ul></div>
+        <div class="code"><pre>def test_empty_cart_costs_zero():
+    assert price(Cart()) == 0</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>One clear assertion story matters more than enforcing one assert per test.</span></div>
+      <a class="resource" href="https://docs.pytest.org/en/stable/getting-started.html"><b>Go deeper →</b> pytest get started<span>https://docs.pytest.org/en/stable/getting-started.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">35 / 82</span></div>
+      <div class="title-pill">Reusable setup with scoped lifetime</div>
+      <h1>Fixtures</h1>
+      <p class="explain">Fixtures are requested by name and can depend on other fixtures. yield fixtures provide teardown. Scope controls reuse across functions, classes, modules, packages, or sessions.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Default to function scope</li><li>Prefer data builders over giant object graphs</li><li>Keep teardown next to acquisition</li></ul></div>
+        <div class="code"><pre>@pytest.fixture
+def cart():
+    c = Cart()
+    c.add(Product(&#x27;A&#x27;, 500))
+    return c</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>If a test’s inputs are invisible inside distant fixtures, readability has been traded for reuse.</span></div>
+      <a class="resource" href="https://docs.pytest.org/en/stable/how-to/fixtures.html"><b>Go deeper →</b> pytest fixtures<span>https://docs.pytest.org/en/stable/how-to/fixtures.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">36 / 82</span></div>
+      <div class="title-pill">Turn rule tables into executable specifications</div>
+      <h1>Parametrization</h1>
+      <p class="explain">Parametrized tests run one test body against many cases and report each case independently. Give domain cases readable IDs so failures explain the business rule.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use for boundaries and decision tables</li><li>Keep expected values explicit</li><li>Do not hide a second algorithm in the test</li></ul></div>
+        <div class="code"><pre>@pytest.mark.parametrize(&#x27;total,pct,expected&#x27;,[
+    (1000, 0, 1000),
+    (1000, 10, 900),
+])
+def test_discount(total,pct,expected):
+    assert discount(total,pct) == expected</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Large parameter matrices may indicate the production API has too many independent dimensions.</span></div>
+      <a class="resource" href="https://docs.pytest.org/en/stable/how-to/parametrize.html"><b>Go deeper →</b> Parametrize tests<span>https://docs.pytest.org/en/stable/how-to/parametrize.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">37 / 82</span></div>
+      <div class="title-pill">Replace boundaries, not internals</div>
+      <h1>Test doubles and monkeypatch</h1>
+      <p class="explain">monkeypatch temporarily changes attributes, environment variables, dictionaries, or paths. Prefer injecting a gateway or callable; patch only where the code under test looks up the dependency.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Fake HTTP at the gateway boundary</li><li>Use tmp_path for file behavior</li><li>Assert outcomes before mock call trivia</li></ul></div>
+        <div class="code"><pre>def test_checkout_decline():
+    def decline(_): raise CardDeclined()
+    with pytest.raises(CardDeclined):
+        checkout(cart, decline)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Over-mocking locks tests to implementation and makes refactoring expensive.</span></div>
+      <a class="resource" href="https://docs.pytest.org/en/stable/how-to/monkeypatch.html"><b>Go deeper →</b> monkeypatch<span>https://docs.pytest.org/en/stable/how-to/monkeypatch.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">38 / 82</span></div>
+      <div class="title-pill">Test failure semantics explicitly</div>
+      <h1>Exceptions and coverage</h1>
+      <p class="explain">Use pytest.raises to verify exception type and meaningful details. Coverage shows which code ran; branch coverage is more useful for decision-heavy logic, but neither measures test quality.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Test recovery and cleanup paths</li><li>Include context in domain exceptions</li><li>Review uncovered branches, not just percentages</li></ul></div>
+        <div class="code"><pre>with pytest.raises(
+    InvalidCoupon,
+    match=&#x27;expired&#x27;,
+):
+    apply_coupon(cart, coupon)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A high coverage number can coexist with assertions that prove almost nothing.</span></div>
+      <a class="resource" href="https://coverage.readthedocs.io/"><b>Go deeper →</b> Coverage.py<span>https://coverage.readthedocs.io/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">39 / 82</span></div>
+      <div class="title-pill">Fast feedback for style and defects</div>
+      <h1>Ruff</h1>
+      <p class="explain">Ruff combines formatting with a broad lint rule set. Configure it centrally in pyproject.toml and adopt rules intentionally rather than enabling everything at once.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Run format and check in CI</li><li>Keep ignores narrow and documented</li><li>Use automatic fixes, then review the diff</li></ul></div>
+        <div class="code"><pre>ruff format .
+ruff check .
+ruff check . --fix</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A formatter ends style debates; a linter should catch risks, not become a puzzle game.</span></div>
+      <a class="resource" href="https://docs.astral.sh/ruff/"><b>Go deeper →</b> Ruff documentation<span>https://docs.astral.sh/ruff/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">40 / 82</span></div>
+      <div class="title-pill">Static checks as a quality gate</div>
+      <h1>mypy or Pyright</h1>
+      <p class="explain">Type checkers analyze annotations without executing the program. Start strict at new package boundaries, then ratchet older code forward instead of flooding the project with Any and ignores.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Check tests as well as production code</li><li>Treat Any as an escape hatch</li><li>Prefer narrow ignores with error codes</li></ul></div>
+        <div class="code"><pre>mypy src tests
+# or
+pyright</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Passing static checks does not validate JSON, HTTP responses, or database rows at runtime.</span></div>
+      <a class="resource" href="https://mypy.readthedocs.io/en/stable/"><b>Go deeper →</b> mypy documentation<span>https://mypy.readthedocs.io/en/stable/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">41 / 82</span></div>
+      <div class="title-pill">Record events for operators</div>
+      <h1>Logging</h1>
+      <p class="explain">Use the logging module or a structured layer to emit levels, context, and exceptions. Configure handlers at the application boundary; libraries should not decide global output destinations.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Log identifiers, duration, and outcome</li><li>Avoid secrets and personal data</li><li>Use logger.exception inside exception handling</li></ul></div>
+        <div class="code"><pre>logger.info(&#x27;order_submitted&#x27;, extra={
+    &#x27;order_id&#x27;: order.id, &#x27;total&#x27;: order.total
+})</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Logs are an interface for diagnosis. Stable event names beat prose that changes every refactor.</span></div>
+      <a class="resource" href="https://docs.python.org/3/howto/logging.html"><b>Go deeper →</b> Logging HOWTO<span>https://docs.python.org/3/howto/logging.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 4</span><span class="page">42 / 82</span></div>
+      <div class="title-pill">Make quality executable</div>
+      <h1>Project: professional test suite</h1>
+      <p class="explain">Add unit tests for pricing, integration tests for package boundaries, linting, formatting, type checking, and coverage reporting. One documented command should reproduce the local gate.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep unit tests network-free</li><li>Test installation in CI</li><li>Fail on warnings you own</li></ul></div>
+        <div class="code"><pre>python -m pytest
+ruff format --check .
+ruff check .
+mypy src tests</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>The deliverable is not “many tests”; it is fast, trustworthy feedback around risky behavior.</span></div>
+      <a class="resource" href="https://docs.pytest.org/en/stable/explanation/goodpractices.html"><b>Go deeper →</b> pytest good practices<span>https://docs.pytest.org/en/stable/explanation/goodpractices.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">43 / 82</span></div>
+      <div class="title-pill">A protocol with stateful traversal</div>
+      <h1>Iterable versus iterator</h1>
+      <p class="explain">iter(x) asks for an iterator; next(it) advances it until StopIteration. Collections usually create fresh iterators, while iterator objects are commonly one-shot.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Accept Iterable when replay is unnecessary</li><li>Return Iterator for one-pass results</li><li>Do not call len() on arbitrary iterables</li></ul></div>
+        <div class="code"><pre>it = iter([&#x27;A&#x27;,&#x27;B&#x27;])
+assert next(it) == &#x27;A&#x27;
+assert next(it) == &#x27;B&#x27;</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Consuming an iterator for logging or validation may leave nothing for the real consumer.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/stdtypes.html#iterator-types"><b>Go deeper →</b> Iterator protocol<span>https://docs.python.org/3/library/stdtypes.html#iterator-types</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">44 / 82</span></div>
+      <div class="title-pill">Write state machines as straight-line code</div>
+      <h1>Generators and yield</h1>
+      <p class="explain">A generator function returns a generator object. Each yield produces a value and suspends local state until the next request, enabling clear incremental pipelines.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use yield from to delegate iteration</li><li>Put cleanup in try/finally when needed</li><li>Keep generator side effects explicit</li></ul></div>
+        <div class="code"><pre>def valid(rows):
+    for row in rows:
+        if row.get(&#x27;sku&#x27;):
+            yield row</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Exceptions may occur during iteration, not when the generator is created—test the consumption point.</span></div>
+      <a class="resource" href="https://docs.python.org/3/reference/expressions.html#yield-expressions"><b>Go deeper →</b> Generator expressions<span>https://docs.python.org/3/reference/expressions.html#yield-expressions</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">45 / 82</span></div>
+      <div class="title-pill">Pay only for consumed values</div>
+      <h1>Lazy evaluation</h1>
+      <p class="explain">Generator expressions compose filtering and projection without allocating intermediate lists. Laziness improves memory use and early termination, but defers work and failures.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use any, all, sum, min, and max as consumers</li><li>Stop early with next or itertools.islice</li><li>Materialize at stable boundaries when debugging or replay matters</li></ul></div>
+        <div class="code"><pre>first_large = next(
+    (o for o in orders if o.total &gt; 10_000),
+    None,
+)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A lazy pipeline tied to an open file or database cursor must not outlive its resource scope.</span></div>
+      <a class="resource" href="https://docs.python.org/3/reference/expressions.html#generator-expressions"><b>Go deeper →</b> Generator expressions<span>https://docs.python.org/3/reference/expressions.html#generator-expressions</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">46 / 82</span></div>
+      <div class="title-pill">Composable iterator building blocks</div>
+      <h1>itertools</h1>
+      <p class="explain">itertools supplies efficient primitives such as chain, islice, groupby, pairwise, and batching. Many operate lazily and assume specific input ordering.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Sort before groupby when grouping globally</li><li>Use islice for bounded previews</li><li>Use batched for fixed-size chunks</li></ul></div>
+        <div class="code"><pre>from itertools import batched
+for chunk in batched(records, 100):
+    write_batch(chunk)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>groupby groups adjacent equal keys; it is not LINQ GroupBy over unsorted input.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/itertools.html"><b>Go deeper →</b> itertools<span>https://docs.python.org/3/library/itertools.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">47 / 82</span></div>
+      <div class="title-pill">Wrap callables without changing callers</div>
+      <h1>Decorators</h1>
+      <p class="explain">A decorator receives a callable and returns a replacement. functools.wraps preserves metadata that frameworks, debuggers, and documentation tools rely on.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use for cross-cutting callable behavior</li><li>Keep order of stacked decorators visible</li><li>Prefer explicit code when wrapping obscures control flow</li></ul></div>
+        <div class="code"><pre>from functools import wraps
+def traced(fn):
+    @wraps(fn)
+    def wrapper(*a, **k):
+        return fn(*a, **k)
+    return wrapper</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Decorators can hide I/O, retries, or transactions; make consequential behavior obvious in naming and docs.</span></div>
+      <a class="resource" href="https://docs.python.org/3/glossary.html#term-decorator"><b>Go deeper →</b> Function decorators<span>https://docs.python.org/3/glossary.html#term-decorator</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">48 / 82</span></div>
+      <div class="title-pill">Make acquire/use/release atomic in code</div>
+      <h1>Context managers</h1>
+      <p class="explain">Classes implement __enter__/__exit__; contextlib.contextmanager turns a generator into a manager. Exit logic runs whether the block succeeds or raises.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use ExitStack for dynamic resource sets</li><li>Do not suppress exceptions accidentally</li><li>Make transaction boundaries visible</li></ul></div>
+        <div class="code"><pre>from contextlib import contextmanager
+@contextmanager
+def transaction(db):
+    tx = db.begin()
+    try: yield tx
+    except: tx.rollback(); raise
+    else: tx.commit()</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Returning True from __exit__ suppresses an exception; do it only as a deliberate API promise.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/contextlib.html"><b>Go deeper →</b> Context manager types<span>https://docs.python.org/3/library/contextlib.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">49 / 82</span></div>
+      <div class="title-pill">Compose functions, process bounded memory</div>
+      <h1>functools and streaming files</h1>
+      <p class="explain">partial binds arguments; cache memoizes deterministic calls; singledispatch provides type-based function variants. Combine these carefully with line-by-line file iteration.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use pathlib for paths</li><li>Specify text encoding explicitly</li><li>Cache only bounded, stable key spaces</li></ul></div>
+        <div class="code"><pre>from pathlib import Path
+with Path(&#x27;sales.csv&#x27;).open(encoding=&#x27;utf-8&#x27;) as f:
+    for line in f:
+        process(line)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>An unbounded cache is a memory leak with a friendly API.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/functools.html"><b>Go deeper →</b> functools<span>https://docs.python.org/3/library/functools.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 5</span><span class="page">50 / 82</span></div>
+      <div class="title-pill">Process data without loading it all</div>
+      <h1>Project: lazy sales pipeline</h1>
+      <p class="explain">Read CSV transactions, validate and normalize rows, convert currencies through an injected service, aggregate results, and write rejected rows separately.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Stream input and output</li><li>Separate parse, validate, enrich, and aggregate stages</li><li>Report line numbers with errors</li></ul></div>
+        <div class="code"><pre>rows = read_csv(path)
+clean = (validate(r) for r in rows)
+converted = (convert(r, rates) for r in clean)
+report(converted)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Measure memory with a realistically large fixture and prove the pipeline begins producing output early.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/csv.html"><b>Go deeper →</b> csv module<span>https://docs.python.org/3/library/csv.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">51 / 82</span></div>
+      <div class="title-pill">Threading is useful—but not universal parallelism</div>
+      <h1>The GIL: practical model</h1>
+      <p class="explain">In standard CPython, a global interpreter lock coordinates execution of Python bytecode. Threads still overlap blocking I/O effectively; CPU-bound Python usually needs processes, native code that releases the lock, or another architecture.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Benchmark the real workload</li><li>Use threads for blocking libraries</li><li>Use processes for isolated CPU work</li></ul></div>
+        <div class="code"><pre># Choose by bottleneck
+I/O bound  -&gt; threads or asyncio
+CPU bound  -&gt; processes</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not use the GIL as a blanket reason to avoid threads; use it to choose them accurately.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/threading.html#gil-and-performance-considerations"><b>Go deeper →</b> Threading and the GIL<span>https://docs.python.org/3/library/threading.html#gil-and-performance-considerations</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">52 / 82</span></div>
+      <div class="title-pill">Concurrent calls with familiar code</div>
+      <h1>Threads for blocking I/O</h1>
+      <p class="explain">ThreadPoolExecutor runs ordinary callables in worker threads and returns futures. Bound the pool, propagate failures, and make shared state minimal.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Suitable for blocking SDKs and file I/O</li><li>Use locks around shared mutable invariants</li><li>Shut executors down with a context manager</li></ul></div>
+        <div class="code"><pre>with ThreadPoolExecutor(max_workers=8) as pool:
+    prices = list(pool.map(fetch_price, skus))</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>More workers can reduce throughput by overwhelming dependencies or increasing contention.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/concurrent.futures.html"><b>Go deeper →</b> concurrent.futures<span>https://docs.python.org/3/library/concurrent.futures.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">53 / 82</span></div>
+      <div class="title-pill">Parallelism with serialization costs</div>
+      <h1>Processes for CPU work</h1>
+      <p class="explain">ProcessPoolExecutor uses separate processes. Arguments and results cross a serialization boundary, so functions and data must be transferable and startup overhead must be justified.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Batch small work units</li><li>Protect process entry points</li><li>Avoid sending huge object graphs repeatedly</li></ul></div>
+        <div class="code"><pre>if __name__ == &#x27;__main__&#x27;:
+    with ProcessPoolExecutor() as pool:
+        results = list(pool.map(score, batches))</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A process pool is not a free speed switch; measure serialization, startup, and memory multiplication.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/concurrent.futures.html#processpoolexecutor"><b>Go deeper →</b> ProcessPoolExecutor<span>https://docs.python.org/3/library/concurrent.futures.html#processpoolexecutor</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">54 / 82</span></div>
+      <div class="title-pill">One event loop, cooperative progress</div>
+      <h1>asyncio fundamentals</h1>
+      <p class="explain">Async code yields control at await points while waiting for compatible operations. The event loop schedules ready tasks; regular blocking calls prevent every other task from progressing.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep async from API boundary to I/O client</li><li>Use asyncio.run at the program entry point</li><li>Never sprinkle await without an async-capable dependency</li></ul></div>
+        <div class="code"><pre>async def main():
+    result = await fetch(&#x27;sku-1&#x27;)
+    print(result)
+
+asyncio.run(main())</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Async improves concurrency and resource use; it does not automatically reduce single-request latency.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/asyncio.html"><b>Go deeper →</b> asyncio conceptual overview<span>https://docs.python.org/3/library/asyncio.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">55 / 82</span></div>
+      <div class="title-pill">Creation is not scheduling</div>
+      <h1>Coroutines and tasks</h1>
+      <p class="explain">Calling an async function returns a coroutine object. Awaiting runs it as part of the current task; create_task schedules independent progress and requires lifecycle ownership.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep strong references to background tasks</li><li>Await tasks before shutdown</li><li>Use TaskGroup for related child work</li></ul></div>
+        <div class="code"><pre>async with asyncio.TaskGroup() as tg:
+    tasks = [tg.create_task(fetch(s)) for s in skus]
+prices = [t.result() for t in tasks]</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Fire-and-forget tasks can disappear, fail silently, or outlive resources.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/asyncio-task.html"><b>Go deeper →</b> Coroutines and tasks<span>https://docs.python.org/3/library/asyncio-task.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">56 / 82</span></div>
+      <div class="title-pill">Latency budgets are part of correctness</div>
+      <h1>Cancellation and timeouts</h1>
+      <p class="explain">asyncio.timeout bounds an awaitable region. Cancellation is delivered as CancelledError; cleanup should run, then cancellation should usually propagate.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Set connect and operation timeouts</li><li>Budget nested calls from the outer deadline</li><li>Clean up in finally or async context managers</li></ul></div>
+        <div class="code"><pre>async with asyncio.timeout(2.0):
+    return await provider.price(sku)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Catching BaseException or CancelledError without re-raising can make shutdown hang.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/asyncio-task.html#timeouts"><b>Go deeper →</b> Timeouts<span>https://docs.python.org/3/library/asyncio-task.html#timeouts</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">57 / 82</span></div>
+      <div class="title-pill">Child tasks belong to a scope</div>
+      <h1>Structured concurrency</h1>
+      <p class="explain">TaskGroup waits for all children and coordinates failure. If one task fails, siblings are cancelled and errors are reported together, making lifetime and failure semantics explicit.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Group work that succeeds or fails together</li><li>Handle ExceptionGroup selectively</li><li>Keep independent workflows in separate groups</li></ul></div>
+        <div class="code"><pre>try:
+    async with asyncio.TaskGroup() as tg:
+        for p in providers:
+            tg.create_task(p.fetch(sku))
+except* ProviderError as errors:
+    record(errors)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Structured concurrency prevents orphan tasks; it does not define your business policy for partial results.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/asyncio-task.html#task-groups"><b>Go deeper →</b> Task groups<span>https://docs.python.org/3/library/asyncio-task.html#task-groups</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">58 / 82</span></div>
+      <div class="title-pill">Await resource acquisition and cleanup</div>
+      <h1>Async context managers</h1>
+      <p class="explain">async with supports resources whose enter or exit work is asynchronous: HTTP sessions, database connections, locks, and streaming responses.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Create clients once per application scope when supported</li><li>Close resources during lifespan shutdown</li><li>Keep transaction scopes short</li></ul></div>
+        <div class="code"><pre>async with client.stream(&#x27;GET&#x27;, url) as response:
+    async for chunk in response.aiter_bytes():
+        consume(chunk)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Creating a new network client per request can defeat connection pooling.</span></div>
+      <a class="resource" href="https://docs.python.org/3/reference/datamodel.html#asynchronous-context-managers"><b>Go deeper →</b> Asynchronous context managers<span>https://docs.python.org/3/reference/datamodel.html#asynchronous-context-managers</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">59 / 82</span></div>
+      <div class="title-pill">One accidental call stalls all tasks</div>
+      <h1>Avoid blocking the event loop</h1>
+      <p class="explain">File APIs, synchronous HTTP clients, CPU-heavy loops, and time.sleep block the event-loop thread. Replace them with async libraries, asyncio.to_thread, or process-based work.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use asyncio.sleep, not time.sleep</li><li>Profile slow callbacks</li><li>Wrap legacy blocking calls deliberately</li></ul></div>
+        <div class="code"><pre>result = await asyncio.to_thread(
+    legacy_sdk.call, sku
+)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>to_thread protects responsiveness but does not turn unsafe libraries into thread-safe ones.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/asyncio-task.html#running-in-threads"><b>Go deeper →</b> Running blocking functions<span>https://docs.python.org/3/library/asyncio-task.html#running-in-threads</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 6</span><span class="page">60 / 82</span></div>
+      <div class="title-pill">Concurrency with bounded failure</div>
+      <h1>Project: price checker</h1>
+      <p class="explain">Query several product providers concurrently, limit in-flight calls, apply per-provider timeouts, and return available prices with explicit errors.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use a semaphore or client connection limits</li><li>Preserve provider identity in results</li><li>Test timeout, cancellation, and partial failure</li></ul></div>
+        <div class="code"><pre>limit = asyncio.Semaphore(10)
+async def bounded(provider, sku):
+    async with limit:
+        return await provider.price(sku)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>The fastest implementation is not one that melts the upstream service.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/asyncio-sync.html"><b>Go deeper →</b> Synchronization primitives<span>https://docs.python.org/3/library/asyncio-sync.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 7</span><span class="page">61 / 82</span></div>
+      <div class="title-pill">Make HTTP contracts explicit</div>
+      <h1>FastAPI models</h1>
+      <p class="explain">FastAPI uses type hints and validation models to parse inputs, document OpenAPI, and serialize outputs. Use separate request, response, and domain types when their responsibilities differ.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Declare status codes and response models</li><li>Keep domain behavior framework-independent</li><li>Version contracts deliberately</li></ul></div>
+        <div class="code"><pre>class CreateOrder(BaseModel):
+    customer_id: str
+    lines: list[OrderLine]
+
+@app.post(&#x27;/orders&#x27;, status_code=201)
+def create(command: CreateOrder): ...</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not return ORM entities directly; persistence shape is not a public API contract.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/body/"><b>Go deeper →</b> Request body models<span>https://fastapi.tiangolo.com/tutorial/body/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 7</span><span class="page">62 / 82</span></div>
+      <div class="title-pill">Composition at the web boundary</div>
+      <h1>Function-based dependencies</h1>
+      <p class="explain">Depends resolves callables and their sub-dependencies. Use it for authentication, request-scoped sessions, and adapters—not to hide every ordinary function call.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Cache application singletons explicitly</li><li>Yield dependencies for cleanup</li><li>Override dependencies in tests</li></ul></div>
+        <div class="code"><pre>def get_service(repo=Depends(get_repo)):
+    return OrderService(repo)
+
+@app.post(&#x27;/orders&#x27;)
+def create(
+    cmd: CreateOrder,
+    svc=Depends(get_service),
+):
+    return svc.create(cmd)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A dependency graph should remain understandable without framework magic.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/dependencies/"><b>Go deeper →</b> FastAPI dependencies<span>https://fastapi.tiangolo.com/tutorial/dependencies/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 7</span><span class="page">63 / 82</span></div>
+      <div class="title-pill">Translate boundary failures consistently</div>
+      <h1>Validation and error handling</h1>
+      <p class="explain">Input models reject malformed requests before handlers run. Domain exceptions should be translated into stable HTTP responses through exception handlers rather than leaking stack details.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Differentiate invalid input, conflict, and absence</li><li>Return machine-readable error codes</li><li>Log internal context without exposing secrets</li></ul></div>
+        <div class="code"><pre>@app.exception_handler(OrderNotFound)
+async def missing(_, exc):
+    return JSONResponse(
+        status_code=404,
+        content={
+            &#x27;code&#x27;: &#x27;order_not_found&#x27;
+        },
+    )</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not return ORM entities directly; persistence shape is not a public API contract.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/handling-errors/"><b>Go deeper →</b> Handling errors<span>https://fastapi.tiangolo.com/tutorial/handling-errors/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 7</span><span class="page">64 / 82</span></div>
+      <div class="title-pill">Own cross-cutting request and app lifecycle</div>
+      <h1>Middleware and lifespan</h1>
+      <p class="explain">Middleware wraps every request for concerns such as correlation IDs and timing. Lifespan manages startup and shutdown resources such as pools and shared clients.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep middleware fast and non-blocking</li><li>Initialize shared resources once</li><li>Close resources deterministically</li></ul></div>
+        <div class="code"><pre>@asynccontextmanager
+async def lifespan(app):
+    app.state.client = AsyncClient()
+    try:
+        yield
+    finally:
+        await app.state.client.aclose()</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not perform slow external health checks on every request through middleware.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/advanced/events/"><b>Go deeper →</b> FastAPI lifespan<span>https://fastapi.tiangolo.com/advanced/events/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 7</span><span class="page">65 / 82</span></div>
+      <div class="title-pill">Validate settings once, isolate persistence</div>
+      <h1>Configuration and database boundaries</h1>
+      <p class="explain">Load configuration from environment or secret stores at startup and validate it. Repositories translate between persistence records and domain objects; transaction scope belongs to the use case.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Never commit production secrets</li><li>Keep sessions request-scoped</li><li>Make transaction ownership visible</li></ul></div>
+        <div class="code"><pre>class Settings(BaseSettings):
+    database_url: SecretStr
+    model_config = SettingsConfigDict(
+        env_prefix=&#x27;APP_&#x27;
+    )</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Environment variables are delivery mechanisms, not validation or secret rotation strategies.</span></div>
+      <a class="resource" href="https://docs.pydantic.dev/latest/concepts/pydantic_settings/"><b>Go deeper →</b> Pydantic settings<span>https://docs.pydantic.dev/latest/concepts/pydantic_settings/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 7</span><span class="page">66 / 82</span></div>
+      <div class="title-pill">Integrate without coupling the core</div>
+      <h1>Project: Order Management API</h1>
+      <p class="explain">Implement create, retrieve, add-line, price, and submit operations. Publish a simulated event only after the state change succeeds, with a testable boundary for delivery.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Generate OpenAPI from explicit contracts</li><li>Test use cases without HTTP</li><li>Add API tests for mapping and status codes</li></ul></div>
+        <div class="code"><pre>POST /orders
+POST /orders/{id}/lines
+POST /orders/{id}/submit
+GET  /orders/{id}</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Completion means the domain package can run in a unit test without importing FastAPI.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/testing/"><b>Go deeper →</b> Testing FastAPI<span>https://fastapi.tiangolo.com/tutorial/testing/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">67 / 82</span></div>
+      <div class="title-pill">Product Intelligence Service</div>
+      <h1>Capstone architecture</h1>
+      <p class="explain">Build a service that queries providers, normalizes offers, caches safe results, and exposes a typed API. Keep transport, orchestration, domain decisions, and infrastructure in separate dependency directions.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>API → application use case → domain</li><li>Adapters implement provider and cache protocols</li><li>Observability surrounds every external boundary</li></ul></div>
+        <div class="code"><pre>app/ api/ application/ domain/ adapters/
+tests/ unit/ integration/</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Architecture is successful when business rules remain testable without network, database, or framework startup.</span></div>
+      <a class="resource" href="https://packaging.python.org/en/latest/guides/packaging-namespace-packages/"><b>Go deeper →</b> Packaging namespace guidance<span>https://packaging.python.org/en/latest/guides/packaging-namespace-packages/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">68 / 82</span></div>
+      <div class="title-pill">Thin endpoints, explicit use cases</div>
+      <h1>Service boundary</h1>
+      <p class="explain">HTTP handlers authenticate, validate, invoke one application operation, and translate the result. Orchestration belongs in a use-case service that is callable from HTTP, jobs, or tests.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Keep framework models at the edge</li><li>Pass a request-scoped context explicitly</li><li>Return domain results, then map to responses</li></ul></div>
+        <div class="code"><pre>@app.get(&#x27;/products/{sku}/offers&#x27;)
+async def offers(
+    sku: str,
+    svc=Depends(service),
+):
+    return await svc.find_offers(sku)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A thin endpoint is not an anemic domain; it simply puts decisions in reusable code.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/bigger-applications/"><b>Go deeper →</b> Bigger FastAPI applications<span>https://fastapi.tiangolo.com/tutorial/bigger-applications/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">69 / 82</span></div>
+      <div class="title-pill">Normalize unreliable external systems</div>
+      <h1>Async provider integrations</h1>
+      <p class="explain">Each provider adapter owns authentication, request mapping, response parsing, timeout defaults, and error translation. The application consumes one stable protocol.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use one shared async client per process</li><li>Validate responses before domain mapping</li><li>Capture provider latency and outcome</li></ul></div>
+        <div class="code"><pre>class Provider(Protocol):
+    async def offers(
+        self, sku: str
+    ) -&gt; list[Offer]: ...</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do not let provider-specific JSON dictionaries escape into the domain.</span></div>
+      <a class="resource" href="https://www.python-httpx.org/async/"><b>Go deeper →</b> HTTPX async support<span>https://www.python-httpx.org/async/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">70 / 82</span></div>
+      <div class="title-pill">Represent valid states clearly</div>
+      <h1>Typed domain model</h1>
+      <p class="explain">Use dataclasses or focused classes for Money, Offer, ProductId, and decisions. Keep unvalidated dictionaries at boundaries and convert them to domain values once.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Encode currency and units</li><li>Reject invalid values at construction</li><li>Prefer immutable values for identifiers and money</li></ul></div>
+        <div class="code"><pre>@dataclass(frozen=True, slots=True)
+class Offer:
+    provider: str
+    price: Decimal
+    currency: str</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Type hints document shape; constructors and boundary validators enforce runtime invariants.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/decimal.html"><b>Go deeper →</b> Decimal<span>https://docs.python.org/3/library/decimal.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">71 / 82</span></div>
+      <div class="title-pill">Cache semantics before technology</div>
+      <h1>Caching</h1>
+      <p class="explain">Choose keys, freshness, invalidation, negative caching, and failure behavior before selecting an in-memory or distributed cache. Never let a stale cache silently violate correctness.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Include locale and currency in keys</li><li>Add bounded TTL with jitter where appropriate</li><li>Measure hits, misses, and load latency</li></ul></div>
+        <div class="code"><pre>key = f&#x27;offers:{sku}:{currency}&#x27;
+if cached := await cache.get(key):
+    return decode(cached)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Caching is duplicated state. Every cache needs an explicit answer for when that duplication becomes invalid.</span></div>
+      <a class="resource" href="https://docs.python.org/3/library/functools.html#functools.lru_cache"><b>Go deeper →</b> functools cache tools<span>https://docs.python.org/3/library/functools.html#functools.lru_cache</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">72 / 82</span></div>
+      <div class="title-pill">Bound every remote call</div>
+      <h1>Retries and timeouts</h1>
+      <p class="explain">Timeouts cap waiting; retries handle selected transient failures. Use exponential backoff with jitter, cap attempts, and respect the caller’s total deadline.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Retry idempotent operations by default</li><li>Do not retry validation or authentication failures</li><li>Record attempts and final outcome</li></ul></div>
+        <div class="code"><pre>for attempt in range(3):
+    try: return await call()
+    except TransientError:
+        await asyncio.sleep(backoff(attempt))</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Retries multiply traffic during incidents. A retry policy without a budget can worsen the outage.</span></div>
+      <a class="resource" href="https://tenacity.readthedocs.io/"><b>Go deeper →</b> Tenacity documentation<span>https://tenacity.readthedocs.io/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">73 / 82</span></div>
+      <div class="title-pill">Choose durability intentionally</div>
+      <h1>Background processing</h1>
+      <p class="explain">In-process tasks suit short, non-critical work tied to the application lifetime. Durable jobs need a queue, persisted state, retries, idempotency, and workers independent of the web process.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Return 202 for accepted asynchronous work</li><li>Generate idempotency keys</li><li>Expose job status and failure reason</li></ul></div>
+        <div class="code"><pre>@app.post(&#x27;/refresh/{sku}&#x27;, status_code=202)
+def refresh(sku: str, tasks: BackgroundTasks):
+    tasks.add_task(refresh_one, sku)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>FastAPI BackgroundTasks is not a durable queue; process termination can lose work.</span></div>
+      <a class="resource" href="https://fastapi.tiangolo.com/tutorial/background-tasks/"><b>Go deeper →</b> Background tasks<span>https://fastapi.tiangolo.com/tutorial/background-tasks/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">74 / 82</span></div>
+      <div class="title-pill">Connect a request across boundaries</div>
+      <h1>Structured logging and observability</h1>
+      <p class="explain">Emit consistent events with correlation ID, operation, provider, duration, and outcome. Add metrics for rates and latency; add traces when cross-service causality matters.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use stable event names</li><li>Propagate trace context to providers</li><li>Keep high-cardinality values out of metric labels</li></ul></div>
+        <div class="code"><pre>logger.info(
+ &#x27;provider_completed&#x27;,
+ extra={
+  &#x27;provider&#x27;: name,
+  &#x27;duration_ms&#x27;: elapsed,
+  &#x27;outcome&#x27;: &#x27;ok&#x27;,
+ },
+)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Observability begins with questions operators must answer, not with installing three agents.</span></div>
+      <a class="resource" href="https://opentelemetry.io/docs/languages/python/"><b>Go deeper →</b> OpenTelemetry Python<span>https://opentelemetry.io/docs/languages/python/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">75 / 82</span></div>
+      <div class="title-pill">Test contracts at the cheapest trustworthy layer</div>
+      <h1>Unit and integration strategy</h1>
+      <p class="explain">Unit tests cover domain rules and orchestration with fakes. Integration tests exercise HTTP mapping, persistence, serialization, and provider adapters against controlled dependencies.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Use contract fixtures for provider responses</li><li>Keep live-provider smoke tests separate</li><li>Test cancellation and timeout behavior</li></ul></div>
+        <div class="code"><pre>tests/
+  unit/test_ranking.py
+  integration/test_api.py
+  integration/test_provider_adapter.py</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>The test pyramid is a feedback design: fast broad confidence below, targeted realism above.</span></div>
+      <a class="resource" href="https://docs.pytest.org/en/stable/explanation/goodpractices.html"><b>Go deeper →</b> pytest good practices<span>https://docs.pytest.org/en/stable/explanation/goodpractices.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">76 / 82</span></div>
+      <div class="title-pill">Build a small, reproducible runtime</div>
+      <h1>Container image</h1>
+      <p class="explain">Use a supported Python base, install dependencies before frequently changing source for layer reuse, run as a non-root user, and define a clear command and health behavior.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Pin the base image deliberately</li><li>Exclude caches, tests, and secrets from build context</li><li>Install and run the built package</li></ul></div>
+        <div class="code"><pre>FROM python:3.14-slim
+WORKDIR /app
+COPY . .
+RUN python -m pip install .
+USER 10001
+CMD [&quot;uvicorn&quot;,&quot;app.main:app&quot;]</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>A container is packaging, not isolation from bad configuration or vulnerable dependencies.</span></div>
+      <a class="resource" href="https://docs.docker.com/guides/python/"><b>Go deeper →</b> Docker Python guide<span>https://docs.docker.com/guides/python/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">WEEK 8</span><span class="page">77 / 82</span></div>
+      <div class="title-pill">Make the clean path automatic</div>
+      <h1>CI quality gates</h1>
+      <p class="explain">A pull request should recreate the environment, install the project, check formatting, lint, type-check, test, build the distribution, and optionally scan dependencies and images.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Cache downloads, not correctness state</li><li>Run the same commands locally and in CI</li><li>Upload test and coverage reports on failure</li></ul></div>
+        <div class="code"><pre>ruff format --check .
+ruff check .
+mypy src tests
+pytest
+python -m build</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>CI that tests only the checkout can miss broken packaging; install the artifact in at least one job.</span></div>
+      <a class="resource" href="https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python"><b>Go deeper →</b> GitHub Actions Python<span>https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">FINAL</span><span class="page">78 / 82</span></div>
+      <div class="title-pill">Definition of done</div>
+      <h1>Final quality checklist</h1>
+      <p class="explain">The capstone is complete when another engineer can clone it, reproduce the environment, run every check, understand failures, and operate the service without hidden local state.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Tests, formatter, linter, and type checker pass</li><li>Dependencies and configuration are explicit</li><li>Timeouts, errors, logs, README, and clean setup are verified</li></ul></div>
+        <div class="code"><pre>python -m venv .venv
+python -m pip install -e &#x27;.[dev]&#x27;
+pytest &amp;&amp; ruff check . &amp;&amp; mypy src</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Do the final verification from a fresh directory or container—not from the environment that accumulated during development.</span></div>
+      <a class="resource" href="https://packaging.python.org/"><b>Go deeper →</b> Python Packaging User Guide<span>https://packaging.python.org/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">FINAL</span><span class="page">79 / 82</span></div>
+      <div class="title-pill">Six to eight focused hours</div>
+      <h1>Weekly study rhythm</h1>
+      <p class="explain">Use short loops that alternate understanding and implementation. A senior engineer’s advantage is judgment; preserve it by reviewing trade-offs rather than racing through syntax.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>60 min: docs and C# comparison</li><li>2 × 90 min: project implementation</li><li>60 min: tests/refactoring · 30 min: exercises · 30 min: review</li></ul></div>
+        <div class="code"><pre>Mon: concept + spike
+Wed: feature + tests
+Sat: integration + retrospective</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Write one sentence each week: “The Python approach differs because…” This makes mental-model changes visible.</span></div>
+      <a class="resource" href="https://docs.python.org/3/tutorial/"><b>Go deeper →</b> Python tutorial<span>https://docs.python.org/3/tutorial/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">FINAL</span><span class="page">80 / 82</span></div>
+      <div class="title-pill">Do not rebuild .NET by hand</div>
+      <h1>What C# developers should avoid</h1>
+      <p class="explain">The common failure mode is syntactically valid Python wrapped in unnecessary factories, interfaces, DTO layers, and service locators. Keep boundaries strong while allowing local code to stay simple.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>No getter/setter boilerplate by default</li><li>No interface for every collaborator</li><li>No async for CPU work; no broad exception swallowing</li></ul></div>
+        <div class="code"><pre># Prefer this
+def price(cart, policy): return policy(cart)
+# over a hierarchy with one method per type</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Pythonic does not mean unstructured. It means choosing the lightest mechanism that preserves clarity and correctness.</span></div>
+      <a class="resource" href="https://docs.python.org/3/faq/design.html"><b>Go deeper →</b> Python design FAQ<span>https://docs.python.org/3/faq/design.html</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">FINAL</span><span class="page">81 / 82</span></div>
+      <div class="title-pill">Apply the core to your destination</div>
+      <h1>Choose a specialization</h1>
+      <p class="explain">After the eight-week core, deepen one path while maintaining the same engineering gates. Build one portfolio artifact that demonstrates decisions, tests, and operation—not just framework syntax.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Backend: FastAPI, SQL, queues, observability</li><li>AI automation: model APIs, tools, evals, safety, workflows</li><li>Data: NumPy, pandas/Polars, notebooks, pipelines</li></ul></div>
+        <div class="code"><pre>core = {
+ &#x27;typing&#x27;, &#x27;testing&#x27;,
+ &#x27;packaging&#x27;, &#x27;async&#x27;,
+ &#x27;quality&#x27;,
+}
+path = choose_one(core)</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Specialization changes libraries, not the need for boundaries, reproducibility, and failure handling.</span></div>
+      <a class="resource" href="https://www.python.org/about/apps/"><b>Go deeper →</b> Python applications<span>https://www.python.org/about/apps/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section><section class="slide">
+      <div class="topline"><span class="section">FINAL</span><span class="page">82 / 82</span></div>
+      <div class="title-pill">One primary source per need</div>
+      <h1>Resource library and next 30 days</h1>
+      <p class="explain">Use the official tutorial for language grounding, packaging.python.org for project structure, pytest for tests, typing.python.org for type-system depth, and FastAPI’s tutorial for APIs. Exercism provides focused practice.</p>
+      <div class="grid">
+        <div class="card"><h2>What to do</h2><ul><li>Week 1: rebuild the CLI without notes</li><li>Week 2: package and test the pricing library</li><li>Week 3: ship the API · Week 4: harden and document</li></ul></div>
+        <div class="code"><pre>BOOKMARKS = [
+ &#x27;docs.python.org/3/&#x27;,
+ &#x27;packaging.python.org/&#x27;,
+ &#x27;docs.pytest.org/&#x27;,
+ &#x27;typing.python.org/&#x27;,
+ &#x27;fastapi.tiangolo.com/&#x27;,
+ &#x27;exercism.org/tracks/python&#x27;,
+]</pre></div>
+      </div>
+      <div class="insight"><b>Senior insight</b><span>Your next milestone is not “finished Python.” It is a deployed, tested service you can explain in a senior design review.</span></div>
+      <a class="resource" href="https://docs.python.org/3/"><b>Go deeper →</b> Official Python documentation<span>https://docs.python.org/3/</span></a>
+      <footer><span>Iryna Tyshchenko</span><span>Python for Senior C# Developers</span></footer>
+    </section></body></html>
